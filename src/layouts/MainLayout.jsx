@@ -25,16 +25,16 @@ function MainLayout() {
 
       <div className="navbar-user">
 
-        <span>
-          {user?.username}
-        </span>
+       <div className="user-badge">
+        {user?.username}
+        </div>
 
-        <button
-          onClick={handleLogout}
-          className="btn btn-danger"
-        >
-          Cerrar sesión
-        </button>
+    <button
+    onClick={handleLogout}
+    className="logout-btn"
+    >
+    Cerrar sesión
+    </button>
 
       </div>
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-
+import ProductForm from "../components/ProductForm";
 import ProductCard from "../components/ProductCard";
 
 import {
@@ -9,6 +9,9 @@ import {
   updateProduct,
   deleteProduct,
 } from "../services/products";
+
+
+
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -90,16 +93,27 @@ function Products() {
   return (
   <div className="products-container">
 
-    <h1>Productos</h1>
+    <div className="products-header">
+      <h1>Productos</h1>
+    </div>
+    <ProductForm onCreate={handleCreate} />
 
-    <div className="products-grid">
+    <div className="products-table">
+      
+
+      <div className="table-head">
+        <span>Producto</span>
+        <span>Categoría</span>
+        <span>Precio</span>
+        <span>Stock</span>
+        <span>Acciones</span>
+      </div>
 
       {products.map((product) => (
         <ProductCard
           key={product.id}
           product={product}
           onDelete={handleDelete}
-          onUpdate={handleUpdate}
         />
       ))}
 

@@ -1,37 +1,31 @@
 function ProductCard({ product, onDelete }) {
   return (
-    <div className="border rounded-lg p-4 shadow">
+    <div className="table-row">
 
-      <img
-  src={
-    product.imagen?.startsWith("http")
-      ? product.imagen
-      : "https://via.placeholder.com/300"
-  }
-  alt={product.nombre}
-  className="w-full h-40 object-cover rounded"
+      <div className="product-info">
 
-      />
+        <img
+          src={
+            product.imagen?.startsWith("http")
+              ? product.imagen
+              : "https://via.placeholder.com/80"
+          }
+          alt={product.nombre}
+        />
 
-      <h2 className="text-xl font-bold mt-3">
-        {product.nombre}
-      </h2>
+        <span>{product.nombre}</span>
 
-      <p className="text-gray-600">
-        Categoría: {product.categoria}
-      </p>
+      </div>
 
-      <p className="font-semibold">
-        Precio: ${product.precio}
-      </p>
+      <span>{product.categoria}</span>
 
-      <p>
-        Stock: {product.stock}
-      </p>
+      <span>${product.precio}</span>
+
+      <span>{product.stock}</span>
 
       <button
         onClick={() => onDelete(product.id)}
-        className="bg-red-500 text-white px-4 py-2 rounded mt-4"
+        className="delete-btn"
       >
         Eliminar
       </button>

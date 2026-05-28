@@ -1,4 +1,8 @@
-function ProductCard({ product, onDelete }) {
+function ProductCard({
+  product,
+  onDelete,
+  onEdit,
+}) {
   return (
     <div className="table-row">
 
@@ -23,12 +27,23 @@ function ProductCard({ product, onDelete }) {
 
       <span>{product.stock}</span>
 
-      <button
-        onClick={() => onDelete(product.id)}
-        className="delete-btn"
-      >
-        Eliminar
-      </button>
+      <div className="actions">
+
+        <button
+          onClick={() => onEdit(product)}
+          className="edit-btn"
+        >
+          Editar
+        </button>
+
+        <button
+          onClick={() => onDelete(product.id)}
+          className="delete-btn"
+        >
+          Eliminar
+        </button>
+
+      </div>
 
     </div>
   );

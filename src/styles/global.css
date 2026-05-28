@@ -410,3 +410,100 @@ body {
 
   gap: 15px;
 }
+
+/* ACTIONS */
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* EDIT BUTTON */
+
+.edit-btn {
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+.edit-btn:hover {
+  background: #1d4ed8;
+}
+
+/* MODAL */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 18px;
+
+  width: 400px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+
+  color: #1e3a8a;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* BUTTONS */
+
+.cancel-btn {
+  background: #e5e7eb;
+
+  border: none;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}

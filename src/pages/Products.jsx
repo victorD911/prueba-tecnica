@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import ProductForm from "../components/ProductForm";
 import ProductCard from "../components/ProductCard";
-
+import EditProduct from "../components/EditProduct";
 import {
   getProducts,
   createProduct,
@@ -15,6 +15,7 @@ import {
 
 function Products() {
   const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     loadProducts();
@@ -110,15 +111,24 @@ function Products() {
       </div>
 
       {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-          onDelete={handleDelete}
-        />
+       <ProductCard
+        key={product.id}
+        product={product}
+        onDelete={handleDelete}
+        onEdit={setSelectedProduct}
+      />
       ))}
 
     </div>
+      <EditProduct
+  product={selectedProduct}
+  onClose={() => setSelectedProduct(null)}
+  onSave={async (updatedProduct) => {
+    await handleUpdate(selectedProduct, updatedProduct);
 
+    setSelectedProduct(null);
+  }}
+/>
   </div>
 );
 }

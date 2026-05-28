@@ -14,7 +14,6 @@ Eliminación de productos con confirmaciones usando SweetAlert2.
 Interfaz responsive y moderna con CSS personalizado.
 
 Stack tecnológico:
-
 React.js + Vite
 React Router DOM
 Hooks de React
